@@ -3,15 +3,15 @@ def fun(s):
     patten = "^[a-zA-Z0-9\-\_]+@[A-Za-z0-9]+[\.][a-zA-Z]{1,3}$"
     return re.search(patten,s)!=None
 
-def filter_mail(emails):
-    return list(filter(fun, emails))
+def filter_mail(email):
+    return list(filter(fun, email))
 
 if __name__ == '__main__':
     n = int(input())
-    emails = []
+    email = []
     for _ in range(n):
-        emails.append(input())
+        email.append(input())
 
-filtered_emails = filter_mail(emails)
-filtered_emails.sort()
-print(filtered_emails)
+filtered_email = filter_mail(email)
+filtered_email.sort()
+print(filtered_email)
