@@ -1,0 +1,12 @@
+class Solution {
+private:
+    vector<int> nums={0,1,1};
+    int maxN=2;
+public:
+    int tri(int n) {
+        if(n<=maxN) return nums[n%3];
+        nums[n%3]=tri(n-3)+tri(n-2)+tri(n-1);
+        maxN=n;
+        return nums[n%3];
+    }
+};
